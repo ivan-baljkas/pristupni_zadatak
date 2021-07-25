@@ -57,7 +57,6 @@ public class PopustKodoviFacadeImpl implements PopustKodoviFacade {
 
         PopustKodovi popustKodovi = new PopustKodovi();
         BeanUtils.copyProperties(form, popustKodovi);
-        popustKodovi.setId(id);
         service.edit(id, popustKodovi);
     }
 

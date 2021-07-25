@@ -12,7 +12,6 @@ public class NacinPlacanjaServiceImpl implements NacinPlacanjaService {
 
     private final NacinPlacanjaRepository repository;
 
-
     public NacinPlacanjaServiceImpl(NacinPlacanjaRepository repository) {
         this.repository = repository;
     }

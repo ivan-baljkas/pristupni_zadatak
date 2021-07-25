@@ -21,7 +21,7 @@ public class PopustKodoviFormValidatorImpl implements PopustKodoviFormValidator 
 
         Assert.notNull(form, "Uneseni Popust kod ne smije biti null.");
         Assert.hasText(form.getKod(),"Atribut KOD ne smije biti prazan.");
-        Assert.notNull(form, "Atribut POPUST mora biti zadan.");
+        Assert.notNull(form.getPopust(), "Atribut POPUST mora biti zadan.");
         Assert.notNull(form.getIskoristen(), "Atribut ISKORISTEN mora biti zadan.");
 
     }
@@ -35,7 +35,7 @@ public class PopustKodoviFormValidatorImpl implements PopustKodoviFormValidator 
 
         Assert.notNull(form, "Uneseni Popust kod ne smije biti null.");
         Assert.hasText(form.getKod(),"Atribut KOD ne smije biti prazan.");
-        Assert.notNull(form, "Atribut POPUST mora biti zadan.");
+        Assert.notNull(form.getPopust(), "Atribut POPUST mora biti zadan.");
         Assert.notNull(form.getIskoristen(), "Atribut ISKORISTEN mora biti zadan.");
 
     }
