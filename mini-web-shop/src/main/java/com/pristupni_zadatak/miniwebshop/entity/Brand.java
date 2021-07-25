@@ -1,6 +1,7 @@
 package com.pristupni_zadatak.miniwebshop.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="BRAND")
@@ -13,6 +14,17 @@ public class Brand {
 
     @Column(name = "NAZIV")
     private String naziv;
+
+    @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY)
+    private List<Proizvod> proizvodi;
+
+    public List<Proizvod> getProizvodi() {
+        return proizvodi;
+    }
+
+    public void setProizvodi(List<Proizvod> proizvodi) {
+        this.proizvodi = proizvodi;
+    }
 
     public Long getId() {
         return id;
