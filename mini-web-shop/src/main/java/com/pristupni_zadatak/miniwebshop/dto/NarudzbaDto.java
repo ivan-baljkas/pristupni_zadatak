@@ -9,6 +9,8 @@ import java.time.LocalDate;
 
 public class NarudzbaDto {
 
+    private Long id;
+
     private LocalDate datum;
 
     private double ukupnaCijenaBezP;
@@ -107,5 +109,13 @@ public class NarudzbaDto {
 
     public void setNapomena(String napomena) {
         this.napomena = napomena;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

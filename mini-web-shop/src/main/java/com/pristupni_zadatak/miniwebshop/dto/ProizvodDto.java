@@ -2,6 +2,8 @@ package com.pristupni_zadatak.miniwebshop.dto;
 
 public class ProizvodDto {
 
+    private Long id;
+
     private String naziv;
 
     private String opis;
@@ -50,5 +52,13 @@ public class ProizvodDto {
 
     public void setBrandId(Long brandId) {
         this.brandId = brandId;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

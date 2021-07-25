@@ -4,6 +4,8 @@ import javax.persistence.Column;
 
 public class PopustKodoviDto {
 
+    private Long id;
+
     private String kod;
 
     private Double popust;
@@ -32,5 +34,13 @@ public class PopustKodoviDto {
 
     public void setIskoristen(Boolean iskoristen) {
         this.iskoristen = iskoristen;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

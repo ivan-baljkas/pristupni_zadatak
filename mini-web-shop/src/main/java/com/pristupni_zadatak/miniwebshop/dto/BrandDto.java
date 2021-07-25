@@ -7,6 +7,8 @@ import javax.persistence.Id;
 
 public class BrandDto {
 
+    private Long id;
+
     private String naziv;
 
     public String getNaziv() {
@@ -15,5 +17,13 @@ public class BrandDto {
 
     public void setNaziv(String naziv) {
         this.naziv = naziv;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
