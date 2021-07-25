@@ -24,6 +24,9 @@ public class PopustKodoviFormValidatorImpl implements PopustKodoviFormValidator 
         Assert.notNull(form.getPopust(), "Atribut POPUST mora biti zadan.");
         Assert.notNull(form.getIskoristen(), "Atribut ISKORISTEN mora biti zadan.");
 
+        if(form.getPopust()<0 || form.getPopust()>1){
+            throw new ValidationException("Popust treba biti broj između 0 i 1.");
+        }
     }
 
     @Override
@@ -37,6 +40,10 @@ public class PopustKodoviFormValidatorImpl implements PopustKodoviFormValidator 
         Assert.hasText(form.getKod(),"Atribut KOD ne smije biti prazan.");
         Assert.notNull(form.getPopust(), "Atribut POPUST mora biti zadan.");
         Assert.notNull(form.getIskoristen(), "Atribut ISKORISTEN mora biti zadan.");
+
+        if(form.getPopust()<0 || form.getPopust()>1){
+            throw new ValidationException("Popust treba biti broj između 0 i 1.");
+        }
 
     }
 }
