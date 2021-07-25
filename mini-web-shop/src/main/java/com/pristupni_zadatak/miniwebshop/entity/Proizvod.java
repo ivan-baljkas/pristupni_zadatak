@@ -1,6 +1,7 @@
 package com.pristupni_zadatak.miniwebshop.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="PROIZVOD")
@@ -29,6 +30,17 @@ public class Proizvod {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BRAND_ID", insertable = false, updatable = false)
     private Brand brand;
+
+    @OneToMany(mappedBy = "proizvod", fetch = FetchType.LAZY)
+    private List<NarudzbaProizvodi> narudzbaProizvodi;
+
+    public List<NarudzbaProizvodi> getNarudzbaProizvodi() {
+        return narudzbaProizvodi;
+    }
+
+    public void setNarudzbaProizvodi(List<NarudzbaProizvodi> narudzbaProizvodi) {
+        this.narudzbaProizvodi = narudzbaProizvodi;
+    }
 
     public Long getId() {
         return id;

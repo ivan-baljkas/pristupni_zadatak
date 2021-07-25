@@ -74,4 +74,8 @@ INSERT INTO PROIZVOD (NAZIV, OPIS, CIJENA, KOLICINA, BRAND_ID) VALUES
     ('Ralph Sampson', 'Puma tenisice', 750, 2, 3),
     ('Club C', 'Reebok tenisice', 700, 5, 4);
 
+INSERT INTO NARUDZBA_PROIZVODI(NARUDZBA_ID, PROIZVOD_ID) VALUES
+    (1, 1),
+    (1, 2),
+    (2, 3)
 

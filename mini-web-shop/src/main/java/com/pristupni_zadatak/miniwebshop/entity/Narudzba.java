@@ -3,6 +3,7 @@ package com.pristupni_zadatak.miniwebshop.entity;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "NARUDZBA")
@@ -51,6 +52,17 @@ public class Narudzba {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "NACIN_PLACANJA_ID", insertable = false, updatable = false)
     private NacinPlacanja nacinPlacanja;
+
+    @OneToMany(mappedBy = "narudzba", fetch = FetchType.LAZY)
+    private List<NarudzbaProizvodi> narudzbaProizvodi;
+
+    public List<NarudzbaProizvodi> getNarudzbaProizvodi() {
+        return narudzbaProizvodi;
+    }
+
+    public void setNarudzbaProizvodi(List<NarudzbaProizvodi> narudzbaProizvodi) {
+        this.narudzbaProizvodi = narudzbaProizvodi;
+    }
 
     public Long getId() {
         return id;
