@@ -1,10 +1,11 @@
 package com.pristupni_zadatak.miniwebshop.validator;
 
-import com.pristupni_zadatak.miniwebshop.form.BrandForm;
+
+import com.pristupni_zadatak.miniwebshop.form.ProizvodForm;
 
 public interface ProizvodFormValidator {
 
-    void validateCreate(BrandForm form);
+    void validateCreate(ProizvodForm form);
 
-    void validateEdit(Long id, BrandForm form);
+    void validateEdit(Long id, ProizvodForm form);
 }
