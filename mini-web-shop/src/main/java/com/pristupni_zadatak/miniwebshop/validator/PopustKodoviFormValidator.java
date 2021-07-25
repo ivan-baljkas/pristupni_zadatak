@@ -6,5 +6,5 @@ public interface PopustKodoviFormValidator {
 
     void validateCreate(PopustKodoviForm form);
 
-    void validatEdit(Long id, PopustKodoviForm form);
+    void validateEdit(Long id, PopustKodoviForm form);
 }

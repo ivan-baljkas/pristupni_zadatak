@@ -4,10 +4,10 @@ import com.pristupni_zadatak.miniwebshop.exception.ValidationException;
 import com.pristupni_zadatak.miniwebshop.form.PopustKodoviForm;
 import com.pristupni_zadatak.miniwebshop.service.PopustKodoviService;
 import com.pristupni_zadatak.miniwebshop.validator.PopustKodoviFormValidator;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
-import java.util.Objects;
-
+@Component
 public class PopustKodoviFormValidatorImpl implements PopustKodoviFormValidator {
 
    private final PopustKodoviService service;
@@ -27,10 +27,10 @@ public class PopustKodoviFormValidatorImpl implements PopustKodoviFormValidator 
     }
 
     @Override
-    public void validatEdit(Long id, PopustKodoviForm form) {
+    public void validateEdit(Long id, PopustKodoviForm form) {
 
         if(!service.existsById(id)){
-            throw new ValidationException("Ne postoji entitet PopustKodovi koji je potrebno ažurirati");
+            throw new ValidationException("Ne postoji entitet PopustKodovi koji ima id: "+id);
         }
 
         Assert.notNull(form, "Uneseni Popust kod ne smije biti null.");
