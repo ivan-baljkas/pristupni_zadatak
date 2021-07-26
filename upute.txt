@@ -1,0 +1,10 @@
+Pokretanje:
+- folder "mini-web-shop" predstavlja backend i potrebno ga je prvog pokrenuti.
+  kako bi se mogli dohvaćati podaci iz baze. Izvršava se na localhost:8080.
+- folder "/frontend/react-akademija-master" je react projekt i pokrece se sa 
+   npm naredbama. Izvodi se u pregledniku na adresi localhost:3000
+
+Provjera funkcionalnosti:
+- Nekad sam morao refreshati browser po više puta da učita inicijane podatke (proizvode u tablici) sa API-ja.
+- filtriranje radi na način da se upišete točno željeni brand/cijena/naziv, također je moguće u svakoj od kombinacija filtrirati.
+- funkcionalnost završava nakon što se ubace proizvodi u košaricu te ispuni forma za naručivanje uz poruku da je uspješno prošla narudžba. 
