@@ -1,0 +1,553 @@
+{
+  "pagination": {
+    "page": 1,
+    "pages": 26,
+    "per_page": 10,
+    "items": 255,
+    "urls": {
+      "first": "https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?per_page=10&page=1",
+      "last": "https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?per_page=10&page=26",
+      "prev": "https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?per_page=10&page=1",
+      "next": "https://api.discogs.com/users/adrianmusiccollector/collection/folders/0/releases?per_page=10&page=3"
+    }
+  },
+  "releases": [
+    {
+      "id": 2462710,
+      "instance_id": 495199692,
+      "date_added": "2020-08-04T08:57:28-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 2462710,
+        "master_id": 28197,
+        "master_url": "https://api.discogs.com/masters/28197",
+        "resource_url": "https://api.discogs.com/releases/2462710",
+        "thumb": "",
+        "cover_image": "",
+        "title": "Danzig III: How The Gods Kill",
+        "year": 0,
+        "formats": [
+          { "name": "CD", "qty": "1", "descriptions": ["Album", "Reissue"] }
+        ],
+        "labels": [
+          {
+            "name": "American Recordings",
+            "catno": "491785 2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 2569,
+            "resource_url": "https://api.discogs.com/labels/2569"
+          },
+          {
+            "name": "Columbia",
+            "catno": "02-491785-10",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1866,
+            "resource_url": "https://api.discogs.com/labels/1866"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Danzig",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 217411,
+            "resource_url": "https://api.discogs.com/artists/217411"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Blues Rock", "Hard Rock", "Heavy Metal"]
+      }
+    },
+    {
+      "id": 385438,
+      "instance_id": 495284040,
+      "date_added": "2020-08-04T15:46:56-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 385438,
+        "master_id": 8636,
+        "master_url": "https://api.discogs.com/masters/8636",
+        "resource_url": "https://api.discogs.com/releases/385438",
+        "thumb": "",
+        "cover_image": "",
+        "title": "For Those About To Rock We Salute You",
+        "year": 1994,
+        "formats": [
+          {
+            "name": "CD",
+            "qty": "1",
+            "descriptions": ["Album", "Reissue", "Remastered"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "ATCO Records",
+            "catno": "7567-92412-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          }
+        ],
+        "artists": [
+          {
+            "name": "AC/DC",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 84752,
+            "resource_url": "https://api.discogs.com/artists/84752"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Hard Rock"]
+      }
+    },
+    {
+      "id": 7332063,
+      "instance_id": 495260051,
+      "date_added": "2020-08-04T14:14:50-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 7332063,
+        "master_id": 8580,
+        "master_url": "https://api.discogs.com/masters/8580",
+        "resource_url": "https://api.discogs.com/releases/7332063",
+        "thumb": "",
+        "cover_image": "",
+        "title": "Live",
+        "year": 0,
+        "formats": [
+          { "name": "CD", "qty": "2", "descriptions": ["Album", "Reissue"] }
+        ],
+        "labels": [
+          {
+            "name": "ATCO Records",
+            "catno": "7567-92212-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          },
+          {
+            "name": "Albert Productions",
+            "catno": "7567-92212-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 33440,
+            "resource_url": "https://api.discogs.com/labels/33440"
+          }
+        ],
+        "artists": [
+          {
+            "name": "AC/DC",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 84752,
+            "resource_url": "https://api.discogs.com/artists/84752"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Hard Rock", "Rock & Roll"]
+      }
+    },
+    {
+      "id": 456943,
+      "instance_id": 495284592,
+      "date_added": "2020-08-04T15:48:52-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 456943,
+        "master_id": 8437,
+        "master_url": "https://api.discogs.com/masters/8437",
+        "resource_url": "https://api.discogs.com/releases/456943",
+        "thumb": "",
+        "cover_image": "",
+        "title": "High Voltage",
+        "year": 1994,
+        "formats": [
+          {
+            "name": "CD",
+            "qty": "1",
+            "descriptions": ["Album", "Reissue", "Remastered"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "ATCO Records",
+            "catno": "7567-92413-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          },
+          {
+            "name": "ATCO Records",
+            "catno": "92413-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          }
+        ],
+        "artists": [
+          {
+            "name": "AC/DC",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 84752,
+            "resource_url": "https://api.discogs.com/artists/84752"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Hard Rock"]
+      }
+    },
+    {
+      "id": 10873272,
+      "instance_id": 719463895,
+      "date_added": "2021-05-31T11:07:58-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 10873272,
+        "master_id": 315130,
+        "master_url": "https://api.discogs.com/masters/315130",
+        "resource_url": "https://api.discogs.com/releases/10873272",
+        "thumb": "",
+        "cover_image": "",
+        "title": "Lightning Strikes",
+        "year": 1986,
+        "formats": [{ "name": "CD", "qty": "1", "descriptions": ["Album"] }],
+        "labels": [
+          {
+            "name": "ATCO Records",
+            "catno": "790 512-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          },
+          {
+            "name": "ATCO Records",
+            "catno": "90512-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Loudness (5)",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 594808,
+            "resource_url": "https://api.discogs.com/artists/594808"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Hard Rock", "Heavy Metal"]
+      }
+    },
+    {
+      "id": 370885,
+      "instance_id": 495193819,
+      "date_added": "2020-08-04T08:15:48-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 370885,
+        "master_id": 8670,
+        "master_url": "https://api.discogs.com/masters/8670",
+        "resource_url": "https://api.discogs.com/releases/370885",
+        "thumb": "",
+        "cover_image": "",
+        "title": "The Razors Edge",
+        "year": 1990,
+        "formats": [{ "name": "CD", "qty": "1", "descriptions": ["Album"] }],
+        "labels": [
+          {
+            "name": "ATCO Records",
+            "catno": "7567-91413-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          },
+          {
+            "name": "ATCO Records",
+            "catno": "7567-91413-2 YS",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          },
+          {
+            "name": "Albert Productions",
+            "catno": "7567-91413-2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 33440,
+            "resource_url": "https://api.discogs.com/labels/33440"
+          },
+          {
+            "name": "Albert Productions",
+            "catno": "7567-91413-2 YS",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 33440,
+            "resource_url": "https://api.discogs.com/labels/33440"
+          }
+        ],
+        "artists": [
+          {
+            "name": "AC/DC",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 84752,
+            "resource_url": "https://api.discogs.com/artists/84752"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Hard Rock"]
+      }
+    },
+    {
+      "id": 3708739,
+      "instance_id": 659792917,
+      "date_added": "2021-04-01T02:51:07-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 3708739,
+        "master_id": 451115,
+        "master_url": "https://api.discogs.com/masters/451115",
+        "resource_url": "https://api.discogs.com/releases/3708739",
+        "thumb": "",
+        "cover_image": "",
+        "title": "Loudness",
+        "year": 1992,
+        "formats": [{ "name": "CD", "qty": "1", "descriptions": ["Album"] }],
+        "labels": [
+          {
+            "name": "ATCO Records",
+            "catno": "WPCL-657",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 3820,
+            "resource_url": "https://api.discogs.com/labels/3820"
+          },
+          {
+            "name": "Warner Music Japan",
+            "catno": "WPCL-657",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 52253,
+            "resource_url": "https://api.discogs.com/labels/52253"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Loudness (5)",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 594808,
+            "resource_url": "https://api.discogs.com/artists/594808"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Speed Metal", "Hard Rock", "Heavy Metal"]
+      }
+    },
+    {
+      "id": 4915709,
+      "instance_id": 495258801,
+      "date_added": "2020-08-04T14:09:39-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 4915709,
+        "master_id": 578071,
+        "master_url": "https://api.discogs.com/masters/578071",
+        "resource_url": "https://api.discogs.com/releases/4915709",
+        "thumb": "",
+        "cover_image": "",
+        "title": "Operation Mindcrime + Queen Of The Reich ",
+        "year": 1999,
+        "formats": [
+          {
+            "name": "CD",
+            "qty": "2",
+            "text": "Media book",
+            "descriptions": [
+              "Compilation",
+              "Deluxe Edition",
+              "Reissue",
+              "Remastered"
+            ]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Axe Killer Records",
+            "catno": "3052182",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 83934,
+            "resource_url": "https://api.discogs.com/labels/83934"
+          },
+          {
+            "name": "Axe Killer Records",
+            "catno": "Wag 351",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 83934,
+            "resource_url": "https://api.discogs.com/labels/83934"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Queensr\u00ffche",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 255363,
+            "resource_url": "https://api.discogs.com/artists/255363"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Heavy Metal"]
+      }
+    },
+    {
+      "id": 6582063,
+      "instance_id": 495262219,
+      "date_added": "2020-08-04T14:24:02-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 6582063,
+        "master_id": 29521,
+        "master_url": "https://api.discogs.com/masters/29521",
+        "resource_url": "https://api.discogs.com/releases/6582063",
+        "thumb": "",
+        "cover_image": "",
+        "title": "Metal Heart",
+        "year": 0,
+        "formats": [
+          {
+            "name": "CD",
+            "qty": "1",
+            "descriptions": ["Album", "Reissue", "Remastered", "Repress"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "BMG",
+            "catno": "74321 93213 2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1003,
+            "resource_url": "https://api.discogs.com/labels/1003"
+          },
+          {
+            "name": "RCA",
+            "catno": "74321 93213 2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 895,
+            "resource_url": "https://api.discogs.com/labels/895"
+          },
+          {
+            "name": "Musicline.de",
+            "catno": "74321 93213 2",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 651772,
+            "resource_url": "https://api.discogs.com/labels/651772"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Accept",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 271475,
+            "resource_url": "https://api.discogs.com/artists/271475"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Heavy Metal"]
+      }
+    },
+    {
+      "id": 9018310,
+      "instance_id": 495282966,
+      "date_added": "2020-08-04T15:43:26-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 9018310,
+        "master_id": 4844,
+        "master_url": "https://api.discogs.com/masters/4844",
+        "resource_url": "https://api.discogs.com/releases/9018310",
+        "thumb": "",
+        "cover_image": "",
+        "title": "Master Of Reality",
+        "year": 2014,
+        "formats": [
+          {
+            "name": "CD",
+            "qty": "1",
+            "text": "Digipak",
+            "descriptions": ["Album", "Reissue", "Remastered"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "BMG",
+            "catno": "2730325",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 1003,
+            "resource_url": "https://api.discogs.com/labels/1003"
+          },
+          {
+            "name": "Sanctuary",
+            "catno": "2730325",
+            "entity_type": "1",
+            "entity_type_name": "Label",
+            "id": 28233,
+            "resource_url": "https://api.discogs.com/labels/28233"
+          }
+        ],
+        "artists": [
+          {
+            "name": "Black Sabbath",
+            "anv": "",
+            "join": "",
+            "role": "",
+            "tracks": "",
+            "id": 144998,
+            "resource_url": "https://api.discogs.com/artists/144998"
+          }
+        ],
+        "genres": ["Rock"],
+        "styles": ["Hard Rock", "Heavy Metal"]
+      }
+    }
+  ]
+}

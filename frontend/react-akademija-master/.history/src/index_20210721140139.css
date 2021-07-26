@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+thead {
+  border-bottom: 2px solid #555;
+}
+
+thead th,
+td {
+  padding: 0.6em 1em;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9e9e9;
+}
+
+.pagination {
+  text-align: center;
+}
+
+button {
+  margin: 0 1.5em;
+  background-color: darkred;
+  color: white;
+  border-width: 0;
+  padding: 0.5em 1em;
+  min-width: 100px;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+.stats {
+  border-bottom: 1px solid #555;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+form div {
+  margin-bottom: 1em;
+}
+
+form {
+  margin-bottom: 2em;
+}
+
+form label {
+  display: inline-block;
+  min-width: 70px;
+}
+
+form button,
+.result {
+  margin-left: 74px;
+}
+
+form input {
+  padding: 0.25em 0.5em;
+}
+
+form label {
+  font-weight: bold;
+}
+
