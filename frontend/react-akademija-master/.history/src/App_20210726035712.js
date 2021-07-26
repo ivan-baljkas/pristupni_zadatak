@@ -3,8 +3,6 @@ import { SearchForm } from "./components/SearchForm";
 import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
 import { TableItem2 } from "./components/TableItem2";
-import { CollectionTable2 } from "./components/CollectionTable2";
-import axios from 'axios';
 
 const App = () => {
 
@@ -64,14 +62,13 @@ const handleQueryChange = (event) => {
 
 const handleDodajProizvod = (proizvodId) => {
 
-  const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
 
 
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
   .then((data) => data.json())
   .then((data) => {
     setState({...state,
+               proizvodi:state.proizvodi.filter(proizvod=> proizvodId !== proizvod.id),
                odabraniProizvodi:[...state.odabraniProizvodi, data]
               });
                
@@ -83,6 +80,20 @@ const handleDodajProizvod = (proizvodId) => {
 
 
 const handleUkloniProizvod = (proizvodId) => {
+
+  (async () => {
+    const rawResponse = await fetch(`http://localhost:8080/api/narudzba-proizvod`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({narudzbaId: state.narudzbaId, proizvodId: proizvodId})
+    });
+    const content = await rawResponse.json();
+  
+    console.log(content);
+  })();
 
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
   .then((data) => data.json())
@@ -119,11 +130,11 @@ const handleUkloniProizvod = (proizvodId) => {
         <h1>
           Košarica
         </h1>
-        <CollectionTable2>
+        <CollectionTable>
         {state.odabraniProizvodi.map(proizvod=>(
           <TableItem2 id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleUkloniProizvod={handleUkloniProizvod}/>
         ))}
-        </CollectionTable2>
+        </CollectionTable>
     </div>
   );
 };

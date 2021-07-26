@@ -13,6 +13,7 @@ public class ProizvodMapperImpl implements ProizvodMapper {
     public ProizvodDto map(Proizvod proizvod) {
         ProizvodDto dto = new ProizvodDto();
         BeanUtils.copyProperties(proizvod,dto);
+        dto.setBrand(proizvod.getBrand().getNaziv());
         return dto;
     }
 }

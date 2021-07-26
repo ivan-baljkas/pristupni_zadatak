@@ -65,7 +65,20 @@ const handleQueryChange = (event) => {
 const handleDodajProizvod = (proizvodId) => {
 
   const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
+  fetch('http://localhost:8080/api/narudzba-proizvod', {
+              method: 'POST',
+              headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+          })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+          })
+        .catch((error) => {
+        console.error('Error:', error);
+  });
 
 
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)

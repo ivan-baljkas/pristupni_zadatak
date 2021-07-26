@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const CollectionTable = (props) =>{
+export const CollectionTable2 = (props) =>{
 
     return(
         <div>
@@ -11,7 +11,6 @@ export const CollectionTable = (props) =>{
                     <th>Naziv</th>
                     <th>Opis</th>
                     <th>Cijena</th>
-                    <th>Količina</th>
                     <th>Brand</th> 
                 </tr>
             </thead>

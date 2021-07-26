@@ -4,7 +4,6 @@ import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
 import { TableItem2 } from "./components/TableItem2";
 import { CollectionTable2 } from "./components/CollectionTable2";
-import axios from 'axios';
 
 const App = () => {
 
@@ -65,7 +64,21 @@ const handleQueryChange = (event) => {
 const handleDodajProizvod = (proizvodId) => {
 
   const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
+  fetch('http://localhost:8080/api/narudzba-proizvod', {
+              method: 'POST',
+              mode: 'cors',
+              headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+          })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+          })
+        .catch((error) => {
+        console.error('Error:', error);
+  });
 
 
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)

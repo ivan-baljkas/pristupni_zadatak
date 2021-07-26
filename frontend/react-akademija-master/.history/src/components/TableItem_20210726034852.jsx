@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TableItem = (props) =>{
+export const TableItem2 = (props) =>{
 
     return(
                 <tr>

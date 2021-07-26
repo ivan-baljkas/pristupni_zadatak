@@ -12,7 +12,7 @@ public class ProizvodDto {
 
     private Integer kolicina;
 
-    private Long brandId;
+    private String brand;
 
     public String getNaziv() {
         return naziv;
@@ -46,12 +46,12 @@ public class ProizvodDto {
         this.kolicina = kolicina;
     }
 
-    public Long getBrandId() {
-        return brandId;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setBrandId(Long brandId) {
-        this.brandId = brandId;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public Long getId() {

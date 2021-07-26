@@ -3,8 +3,6 @@ import { SearchForm } from "./components/SearchForm";
 import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
 import { TableItem2 } from "./components/TableItem2";
-import { CollectionTable2 } from "./components/CollectionTable2";
-import axios from 'axios';
 
 const App = () => {
 
@@ -13,8 +11,7 @@ const App = () => {
       odabraniProizvodi:[],
       brandovi: [],
       searchQuery:'',
-      brand:'',
-      narudzbaId: 1
+      brand:''
   });
 
   const [queryResult, setQueryResult]= useState('No results');
@@ -64,32 +61,12 @@ const handleQueryChange = (event) => {
 
 const handleDodajProizvod = (proizvodId) => {
 
-  const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
-
-
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
   .then((data) => data.json())
   .then((data) => {
     setState({...state,
+               proizvodi:state.proizvodi.filter(proizvod=> proizvodId !== proizvod.id),
                odabraniProizvodi:[...state.odabraniProizvodi, data]
-              });
-               
-  })
-  .catch((error)=>{
-      console.log('Error: ',error);
-  });
-};
-
-
-const handleUkloniProizvod = (proizvodId) => {
-
-  fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
-  .then((data) => data.json())
-  .then((data) => {
-    setState({...state,
-               odabraniProizvodi:state.odabraniProizvodi.filter(proizvod=> proizvodId !== proizvod.id),
-               proizvodi:[...state.proizvodi, data]
               });
                
   })
@@ -117,13 +94,13 @@ const handleUkloniProizvod = (proizvodId) => {
         ))}
         </CollectionTable>
         <h1>
-          Košarica
+          Odabrani Proizvodi
         </h1>
-        <CollectionTable2>
+        <CollectionTable>
         {state.odabraniProizvodi.map(proizvod=>(
-          <TableItem2 id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleUkloniProizvod={handleUkloniProizvod}/>
+          <TableItem2 id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleUkloniProizvod={handleDodajProizvod}/>
         ))}
-        </CollectionTable2>
+        </CollectionTable>
     </div>
   );
 };

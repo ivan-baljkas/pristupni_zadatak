@@ -3,8 +3,6 @@ import { SearchForm } from "./components/SearchForm";
 import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
 import { TableItem2 } from "./components/TableItem2";
-import { CollectionTable2 } from "./components/CollectionTable2";
-import axios from 'axios';
 
 const App = () => {
 
@@ -64,8 +62,13 @@ const handleQueryChange = (event) => {
 
 const handleDodajProizvod = (proizvodId) => {
 
-  const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ narudzbaId: state.narudzbaId, proizvodId:proizvodId})
+  };
+fetch('http://localhost:8080/api/narudzba-proizvod', requestOptions)
+    .then(response => response.json())
 
 
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
@@ -119,11 +122,11 @@ const handleUkloniProizvod = (proizvodId) => {
         <h1>
           Košarica
         </h1>
-        <CollectionTable2>
+        <CollectionTable>
         {state.odabraniProizvodi.map(proizvod=>(
           <TableItem2 id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleUkloniProizvod={handleUkloniProizvod}/>
         ))}
-        </CollectionTable2>
+        </CollectionTable>
     </div>
   );
 };

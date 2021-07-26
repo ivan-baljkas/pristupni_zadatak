@@ -2,9 +2,6 @@ import React, {useState, useEffect} from "react";
 import { SearchForm } from "./components/SearchForm";
 import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
-import { TableItem2 } from "./components/TableItem2";
-import { CollectionTable2 } from "./components/CollectionTable2";
-import axios from 'axios';
 
 const App = () => {
 
@@ -13,8 +10,7 @@ const App = () => {
       odabraniProizvodi:[],
       brandovi: [],
       searchQuery:'',
-      brand:'',
-      narudzbaId: 1
+      brand:''
   });
 
   const [queryResult, setQueryResult]= useState('No results');
@@ -64,38 +60,33 @@ const handleQueryChange = (event) => {
 
 const handleDodajProizvod = (proizvodId) => {
 
-  const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
-
-
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
   .then((data) => data.json())
   .then((data) => {
+    console.log(data)
     setState({...state,
-               odabraniProizvodi:[...state.odabraniProizvodi, data]
+               proizvodi:state.proizvodi.filter(proizvod=> proizvodId !== proizvod.id),
+               odabraniProizvodi:[...state.proizvodi, data]
               });
                
   })
   .catch((error)=>{
       console.log('Error: ',error);
   });
-};
 
 
-const handleUkloniProizvod = (proizvodId) => {
-
-  fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
-  .then((data) => data.json())
-  .then((data) => {
-    setState({...state,
-               odabraniProizvodi:state.odabraniProizvodi.filter(proizvod=> proizvodId !== proizvod.id),
-               proizvodi:[...state.proizvodi, data]
-              });
-               
-  })
-  .catch((error)=>{
-      console.log('Error: ',error);
-  });
+  axios.get(`https://tecajevi-i-lekcije.herokuapp.com/customers/${rowId}`)
+  .then(response => {
+      setFormState(formState => ({
+          ...formState,
+          customers:formState.customers.filter(customer=>customer.id!==rowId),
+          customers2:[...formState.customers2,response.data],
+          values: {
+              ...formState.values,
+              membersId:[...formState.values.membersId, rowId]
+          }
+      }));       
+});
 };
 
 
@@ -117,13 +108,13 @@ const handleUkloniProizvod = (proizvodId) => {
         ))}
         </CollectionTable>
         <h1>
-          Košarica
+          Odabrani Proizvodi
         </h1>
-        <CollectionTable2>
+        <CollectionTable>
         {state.odabraniProizvodi.map(proizvod=>(
-          <TableItem2 id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleUkloniProizvod={handleUkloniProizvod}/>
+          <TableItem id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleDodajProizvod={handleDodajProizvod}/>
         ))}
-        </CollectionTable2>
+        </CollectionTable>
     </div>
   );
 };

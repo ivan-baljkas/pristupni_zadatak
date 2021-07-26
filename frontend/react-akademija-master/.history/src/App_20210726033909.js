@@ -2,9 +2,6 @@ import React, {useState, useEffect} from "react";
 import { SearchForm } from "./components/SearchForm";
 import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
-import { TableItem2 } from "./components/TableItem2";
-import { CollectionTable2 } from "./components/CollectionTable2";
-import axios from 'axios';
 
 const App = () => {
 
@@ -13,8 +10,7 @@ const App = () => {
       odabraniProizvodi:[],
       brandovi: [],
       searchQuery:'',
-      brand:'',
-      narudzbaId: 1
+      brand:''
   });
 
   const [queryResult, setQueryResult]= useState('No results');
@@ -62,40 +58,24 @@ const handleQueryChange = (event) => {
   };
 
 
-const handleDodajProizvod = (proizvodId) => {
+const handlePrevious = (event) => {
+  event.preventDefault();
+  const newPage = state.currentPage - 1;
+  
+  setState({...state, currentPage:newPage})
 
-  const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
-
-
-  fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
-  .then((data) => data.json())
-  .then((data) => {
-    setState({...state,
-               odabraniProizvodi:[...state.odabraniProizvodi, data]
-              });
-               
-  })
-  .catch((error)=>{
-      console.log('Error: ',error);
-  });
+  
 };
 
+const handleNext = (event) => {
+  event.preventDefault();
+  const newPage = state.currentPage + 1;
+  
+  setState({...state, currentPage:newPage})
+};
 
-const handleUkloniProizvod = (proizvodId) => {
-
-  fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
-  .then((data) => data.json())
-  .then((data) => {
-    setState({...state,
-               odabraniProizvodi:state.odabraniProizvodi.filter(proizvod=> proizvodId !== proizvod.id),
-               proizvodi:[...state.proizvodi, data]
-              });
-               
-  })
-  .catch((error)=>{
-      console.log('Error: ',error);
-  });
+const handleDodajProizvod = (event) => {
+  console.log("hello")
 };
 
 
@@ -117,13 +97,8 @@ const handleUkloniProizvod = (proizvodId) => {
         ))}
         </CollectionTable>
         <h1>
-          Košarica
+          Odabrani Proizvodi
         </h1>
-        <CollectionTable2>
-        {state.odabraniProizvodi.map(proizvod=>(
-          <TableItem2 id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleUkloniProizvod={handleUkloniProizvod}/>
-        ))}
-        </CollectionTable2>
     </div>
   );
 };

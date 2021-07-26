@@ -64,8 +64,13 @@ const handleQueryChange = (event) => {
 
 const handleDodajProizvod = (proizvodId) => {
 
-  const data = { narudzbaId: state.narudzbaId, proizvodId: proizvodId };
-
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ narudzbaId: state.narudzbaId, proizvodId:proizvodId})
+  };
+fetch('http://localhost:8080/api/narudzba-proizvod', requestOptions)
+    .then(response => response.json())
 
 
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
