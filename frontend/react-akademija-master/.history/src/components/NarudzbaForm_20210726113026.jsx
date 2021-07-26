@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SearchForm = (props) =>{
+export const NarudzbaForm = (props) =>{
 
     return(
         <div>
@@ -8,16 +8,16 @@ export const SearchForm = (props) =>{
             <div>
                 
                 <label htmlFor="query">Brand</label>
-                <input type="text" id="brand" name="brand" onChange={props.handleChange}/>
+                <input type="text" id="brand" name="brand" onChange={props.handleQueryChange}/>
                 
             </div>
             <div>
             <   label htmlFor="query">Naziv</label>
-                <input type="text" id="naziv" name="naziv" onChange={props.handleChange}/>
+                <input type="text" id="naziv" name="naziv" onChange={props.handleQueryChange}/>
             </div>
             <div>
                 <label htmlFor="query">Cijena</label>
-                <input type="number" id="cijena" name="cijena" onChange={props.handleChange}/> 
+                <input type="number" id="cijena" name="cijena" onChange={props.handleQueryChange}/> 
                 
             </div>  
             <div>

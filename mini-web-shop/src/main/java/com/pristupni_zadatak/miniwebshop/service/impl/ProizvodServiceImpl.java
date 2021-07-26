@@ -23,6 +23,16 @@ public class ProizvodServiceImpl implements ProizvodService {
     @Override
     public List<Proizvod> getAll(String brand, String naziv, Double cijena) {
 
+        if(brand!= null && brand.equalsIgnoreCase("null")){
+            brand= null;
+        }
+        if(naziv!= null && naziv.equalsIgnoreCase("null")){
+            naziv= null;
+        }
+        if(cijena!= null && cijena==0.0){
+            cijena= null;
+        }
+
         if(brand!=null && naziv==null && cijena==null){
             return repository.findAllByBrand(brandService.findByNaziv(brand));
         }

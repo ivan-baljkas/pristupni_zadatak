@@ -203,7 +203,7 @@ const handleUkloniProizvod = (proizvodId) => {
         <h1>
           Detalji narudžbe
         </h1>
-        <NarudzbaForm ukupnaCijena={state.ukupnaCijena} naciniPlacanja={state.naciniPlacanja}/>
+        <NarudzbaForm ukupnaCijena={state.ukupnaCijena}/>
     </div>
   );
 };

@@ -8,21 +8,20 @@ export const SearchForm = (props) =>{
             <div>
                 
                 <label htmlFor="query">Brand</label>
-                <input type="text" id="brand" name="brand" onChange={props.handleChange}/>
+                <input type="text" id="brand" name="query" onChange={props.handleQueryChange}/>
+                <button type="submit">Search</button>
                 
             </div>
             <div>
             <   label htmlFor="query">Naziv</label>
-                <input type="text" id="naziv" name="naziv" onChange={props.handleChange}/>
+                <input type="text" id="query" name="query" onChange={props.handleQueryChange}/>
+                <button type="submit">Search</button>
             </div>
             <div>
                 <label htmlFor="query">Cijena</label>
-                <input type="number" id="cijena" name="cijena" onChange={props.handleChange}/> 
-                
-            </div>  
-            <div>
-                <button type="submit">Filtriraj</button>
-            </div> 
+                <input type="number" id="query" name="query" onChange={props.handleQueryChange}/> 
+                <button type="submit">Search</button>
+            </div>   
 
             </form>   
             

@@ -48,8 +48,8 @@ useEffect(() => {
         console.log('Error: ',error);
     });
 
-     /*Dohvaćanje Nacina placanja*/ 
-    fetch(`http://localhost:8080/api/nacin-placanja`)
+        /*Dohvaćanje Nacina placanja*/ 
+        fetch(`http://localhost:8080/api/nacin-placanja`)
         .then((data) => data.json())
         .then((data) => {
           console.log(data)
@@ -203,7 +203,7 @@ const handleUkloniProizvod = (proizvodId) => {
         <h1>
           Detalji narudžbe
         </h1>
-        <NarudzbaForm ukupnaCijena={state.ukupnaCijena} naciniPlacanja={state.naciniPlacanja}/>
+        <NarudzbaForm ukupnaCijena={state.ukupnaCijena}/>
     </div>
   );
 };

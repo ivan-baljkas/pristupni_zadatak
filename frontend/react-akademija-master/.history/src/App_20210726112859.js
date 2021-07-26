@@ -4,7 +4,6 @@ import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
 import { TableItem2 } from "./components/TableItem2";
 import { CollectionTable2 } from "./components/CollectionTable2";
-import { NarudzbaForm } from "./components/NarudzbaForm";
 
 
 const App = () => {
@@ -12,11 +11,11 @@ const App = () => {
   const [state, setState]= useState({
       proizvodi:[],
       odabraniProizvodi:[],
-      naciniPlacanja:[],
       brandovi: [],
-      narudzbaId: 1,
-      ukupnaCijena:0
+      narudzbaId: 1
   });
+
+  const [queryResult, setQueryResult]= useState('No results');
 
   const[formState, setFormState] = useState({
       brand:'',
@@ -47,17 +46,6 @@ useEffect(() => {
     .catch((error)=>{
         console.log('Error: ',error);
     });
-
-     /*Dohvaćanje Nacina placanja*/ 
-    fetch(`http://localhost:8080/api/nacin-placanja`)
-        .then((data) => data.json())
-        .then((data) => {
-          console.log(data)
-          setState({...state, naciniPlacanja:data})
-        })
-        .catch((error)=>{
-            console.log('Error: ',error);
-        });
 },[]);
 
 // za filtriranje
@@ -87,14 +75,13 @@ const handleSearch = (event) => {
 
 };
 
-// za svaku promjenu u unosu filtera i detalja narudzbe
-const handleChange = (event) => {
+// za svaku promjenu u unosu filtera
+const handleQueryChange = (event) => {
   const value = event.currentTarget.value;
   setFormState({ ...formState, [event.target.name]: value });
 
   console.log(event.target.name,":",event.currentTarget.value)
   };
-
 
 
   // za dodavanje proizvoda u košaricu
@@ -130,11 +117,9 @@ const handleDodajProizvod = (proizvodId) => {
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
   .then((data) => data.json())
   .then((data) => {
-    const newUkupnaCijena = state.ukupnaCijena + data.cijena;
     setState({...state,
                 proizvodi:newProizvodi.filter(p=> p.kolicina>0),
-               odabraniProizvodi:[...state.odabraniProizvodi, data],
-               ukupnaCijena: newUkupnaCijena
+               odabraniProizvodi:[...state.odabraniProizvodi, data]
               });
                
   })
@@ -170,11 +155,8 @@ const handleUkloniProizvod = (proizvodId) => {
   const index = newodabraniProizvodi.indexOf(proizvodZaIzbaciti);
   newodabraniProizvodi.splice(index, 1)
 
-  const newUkupnaCijena = state.ukupnaCijena - proizvodZaIzbaciti.cijena;
-
   setState({...state,
-    odabraniProizvodi:newodabraniProizvodi,
-    ukupnaCijena:newUkupnaCijena
+    odabraniProizvodi:newodabraniProizvodi
    });
 
 };
@@ -186,7 +168,9 @@ const handleUkloniProizvod = (proizvodId) => {
           Proizvodi
         </h1>  
       </header>
-      <SearchForm state={state}  handleSearch={handleSearch} handleChange={handleChange}/>
+      <SearchForm state={state}  handleSearch={handleSearch} handleQueryChange={handleQueryChange}>
+          {queryResult}
+        </SearchForm>
         <CollectionTable>
         {state.proizvodi.map(proizvod=>(
           <TableItem id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleDodajProizvod={handleDodajProizvod}/>
@@ -200,10 +184,6 @@ const handleUkloniProizvod = (proizvodId) => {
           <TableItem2 id={proizvod.id} {...proizvod} brandovi={state.brandovi} handleUkloniProizvod={handleUkloniProizvod}/>
         ))}
         </CollectionTable2>
-        <h1>
-          Detalji narudžbe
-        </h1>
-        <NarudzbaForm ukupnaCijena={state.ukupnaCijena} naciniPlacanja={state.naciniPlacanja}/>
     </div>
   );
 };
