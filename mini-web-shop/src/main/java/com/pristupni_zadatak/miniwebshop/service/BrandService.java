@@ -11,6 +11,8 @@ public interface BrandService {
 
     boolean existsByNaziv(String naziv);
 
+    Brand findByNaziv(String naziv);
+
     boolean existsByNazivAndIdNot(String naziv, Long id);
 
     List<Brand> getAll();

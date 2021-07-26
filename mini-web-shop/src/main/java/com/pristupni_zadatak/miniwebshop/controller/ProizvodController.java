@@ -17,8 +17,10 @@ public class ProizvodController {
     }
 
     @GetMapping
-    public List<ProizvodDto> getAll(){
-        return facade.getAll();
+    public List<ProizvodDto> getAll(@RequestParam(required = false) String brand,
+                                    @RequestParam(required = false) String naziv,
+                                    @RequestParam(required = false) Double cijena){
+        return facade.getAll(brand, naziv, cijena);
     }
 
     @GetMapping("/{Id}")

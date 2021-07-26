@@ -7,4 +7,6 @@ public interface BrandRepository extends JpaRepository<Brand, Long> {
     boolean existsByNaziv(String naziv);
 
     boolean existsByNazivAndIdNot(String naziv, Long id);
+
+    Brand findByNaziv(String naziv);
 }

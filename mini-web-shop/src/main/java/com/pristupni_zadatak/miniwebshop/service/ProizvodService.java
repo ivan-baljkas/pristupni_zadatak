@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProizvodService {
     
-    List<Proizvod> getAll();
+    List<Proizvod> getAll(String brand, String naziv, Double cijena);
 
     Proizvod get(Long id);
 

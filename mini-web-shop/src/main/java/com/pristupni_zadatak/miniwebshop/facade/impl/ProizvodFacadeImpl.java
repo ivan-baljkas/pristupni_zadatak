@@ -28,8 +28,8 @@ public class ProizvodFacadeImpl implements ProizvodFacade {
     }
 
     @Override
-    public List<ProizvodDto> getAll() {
-        return service.getAll()
+    public List<ProizvodDto> getAll(String brand, String naziv, Double cijena) {
+        return service.getAll(brand, naziv, cijena)
                 .stream()
                 .map(proizvod ->  mapper.map(proizvod)
                 ).collect(Collectors.toList());

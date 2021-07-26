@@ -27,6 +27,11 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
+    public Brand findByNaziv(String naziv) {
+        return repository.findByNaziv(naziv);
+    }
+
+    @Override
     public boolean existsByNazivAndIdNot(String naziv, Long id) {
         return repository.existsByNazivAndIdNot(naziv, id);
     }

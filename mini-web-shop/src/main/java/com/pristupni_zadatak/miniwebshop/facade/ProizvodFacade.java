@@ -6,7 +6,7 @@ import com.pristupni_zadatak.miniwebshop.form.ProizvodForm;
 import java.util.List;
 
 public interface ProizvodFacade {
-    List<ProizvodDto> getAll();
+    List<ProizvodDto> getAll(String brand, String naziv, Double cijena);
 
     ProizvodDto get(Long id);
 
