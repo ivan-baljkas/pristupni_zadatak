@@ -15,4 +15,6 @@ public interface NarudzbaProizvodiFacade {
     void edit(Long id, NarudzbaProizvodiForm form);
 
     void delete(Long id);
+
+    void deleteTrenutnaNarudzba(Long narudzbaId, Long proizvodId);
 }

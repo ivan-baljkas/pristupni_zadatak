@@ -4,6 +4,7 @@ import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
 import { TableItem2 } from "./components/TableItem2";
 import { CollectionTable2 } from "./components/CollectionTable2";
+import axios from 'axios';
 
 
 const App = () => {

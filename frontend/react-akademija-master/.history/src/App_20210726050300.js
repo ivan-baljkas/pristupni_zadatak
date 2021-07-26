@@ -4,6 +4,7 @@ import { CollectionTable } from "./components/CollectionTable";
 import { TableItem } from "./components/TableItem";
 import { TableItem2 } from "./components/TableItem2";
 import { CollectionTable2 } from "./components/CollectionTable2";
+import axios from 'axios';
 
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       brandovi: [],
       searchQuery:'',
       brand:'',
-      narudzbaId: 1
+      narudzbaId: 1,
+      promjena:''
   });
 
   const [queryResult, setQueryResult]= useState('No results');
@@ -41,7 +43,7 @@ useEffect(() => {
     .catch((error)=>{
         console.log('Error: ',error);
     });
-},[]);
+}, [state.promjena]);
 
 const handleSearch = (event) => {
   event.preventDefault();
@@ -74,20 +76,11 @@ const handleDodajProizvod = (proizvodId) => {
       console.error('Error:', error);
         });
 
-  
-  let newProizvodi = state.proizvodi;
-  newProizvodi.forEach(p=>{
-    if(p.id === proizvodId){
-        p.kolicina=p.kolicina-1;
-    }
-  });
-
 
   fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
   .then((data) => data.json())
   .then((data) => {
     setState({...state,
-                proizvodi:newProizvodi.filter(p=> p.kolicina>0),
                odabraniProizvodi:[...state.odabraniProizvodi, data]
               });
                
@@ -96,36 +89,27 @@ const handleDodajProizvod = (proizvodId) => {
       console.log('Error: ',error);
   });
 
+  setState({...state,
+    promjena:'novi podaci'
+   });
+
 };
 
 
 const handleUkloniProizvod = (proizvodId) => {
 
-  fetch(`http://localhost:8080/api/narudzba-proizvod/${state.narudzbaId}/${proizvodId}`, 
-  { method: 'DELETE' })
-
-  let newProizvodi = state.proizvodi;
-  newProizvodi.forEach(p=>{
-    if(p.id === proizvodId){
-        p.kolicina=p.kolicina+1;
-    }
-  });
-
-  let proizvodZaIzbaciti;
-  let newodabraniProizvodi = state.odabraniProizvodi;
-  newodabraniProizvodi.forEach(p=>{
-    if(p.id === proizvodId){
-        proizvodZaIzbaciti = p;
-    }
+  fetch(`http://localhost:8080/api/proizvod/${proizvodId}`)
+  .then((data) => data.json())
+  .then((data) => {
+    setState({...state,
+               odabraniProizvodi:state.odabraniProizvodi.filter(proizvod=> proizvodId !== proizvod.id),
+               proizvodi:[...state.proizvodi, data]
+              });
+               
   })
-
-  const index = newodabraniProizvodi.indexOf(proizvodZaIzbaciti);
-  newodabraniProizvodi.splice(index, 1)
-
-  setState({...state,
-    odabraniProizvodi:newodabraniProizvodi
-   });
-
+  .catch((error)=>{
+      console.log('Error: ',error);
+  });
 };
 
 

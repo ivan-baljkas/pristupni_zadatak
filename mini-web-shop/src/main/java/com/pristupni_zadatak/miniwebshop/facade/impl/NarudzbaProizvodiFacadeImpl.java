@@ -66,4 +66,9 @@ public class NarudzbaProizvodiFacadeImpl implements NarudzbaProizvodiFacade {
     public void delete(Long id) {
         service.delete(id);
     }
+
+    @Override
+    public void deleteTrenutnaNarudzba(Long narudzbaId, Long proizvodId) {
+        service.deleteTrenutnaNarudzba(narudzbaId, proizvodId);
+    }
 }

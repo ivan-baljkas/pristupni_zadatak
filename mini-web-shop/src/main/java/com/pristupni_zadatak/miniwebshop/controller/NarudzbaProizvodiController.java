@@ -42,4 +42,10 @@ public class NarudzbaProizvodiController {
     public void delete(@PathVariable Long Id){
         facade.delete(Id);
     }
+
+    @DeleteMapping("/{narudzbaId}/{proizvodId}")
+    public void deleteTrenutnaNarudzba(@PathVariable Long narudzbaId,
+                                       @PathVariable Long proizvodId){
+        facade.deleteTrenutnaNarudzba(narudzbaId, proizvodId);
+    }
 }

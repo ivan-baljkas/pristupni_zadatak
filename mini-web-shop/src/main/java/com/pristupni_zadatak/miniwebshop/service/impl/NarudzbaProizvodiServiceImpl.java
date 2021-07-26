@@ -58,4 +58,12 @@ public class NarudzbaProizvodiServiceImpl implements NarudzbaProizvodiService {
         proizvodService.edit(proizvod.getId(), proizvod);
         repository.delete(repository.getById(id));
     }
+
+    @Override
+    public void deleteTrenutnaNarudzba(Long narudzbaId, Long proizvodId) {
+        Proizvod proizvod= proizvodService.get(proizvodId);
+        proizvod.setKolicina(proizvod.getKolicina()+1);
+        proizvodService.edit(proizvod.getId(), proizvod);
+        repository.delete(repository.findFirstByNarudzbaIdAndProizvodId(narudzbaId, proizvodId));
+    }
 }

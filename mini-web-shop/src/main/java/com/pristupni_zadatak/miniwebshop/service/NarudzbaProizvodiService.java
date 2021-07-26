@@ -17,4 +17,6 @@ public interface NarudzbaProizvodiService {
     void edit(Long id, NarudzbaProizvodi narudzbaProizvodi);
 
     void delete(Long id);
+
+    void deleteTrenutnaNarudzba(Long narudzbaId, Long proizvodId);
 }

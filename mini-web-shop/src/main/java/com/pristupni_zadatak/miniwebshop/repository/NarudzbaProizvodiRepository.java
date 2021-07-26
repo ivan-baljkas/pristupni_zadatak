@@ -8,4 +8,6 @@ import java.util.List;
 public interface NarudzbaProizvodiRepository extends JpaRepository<NarudzbaProizvodi, Long> {
 
     List<NarudzbaProizvodi> findAllByNarudzbaId(Long narudzbaId);
+
+    NarudzbaProizvodi findFirstByNarudzbaIdAndProizvodId(Long narudzbaId, Long proizvodId);
 }
