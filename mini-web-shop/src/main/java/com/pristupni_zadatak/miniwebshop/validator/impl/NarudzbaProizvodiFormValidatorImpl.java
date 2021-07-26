@@ -28,6 +28,10 @@ public class NarudzbaProizvodiFormValidatorImpl implements NarudzbaProizvodiForm
         if(!proizvodService.existsById(form.getProizvodId())){
             throw new ValidationException("Ne postoji proizvod sa id-om:"+ form.getProizvodId());
         }
+
+        if(proizvodService.get(form.getProizvodId()).getKolicina()<=0){
+            throw new ValidationException("Željenog proizvoda nema na zalihama. (id: "+form.getProizvodId()+")");
+        }
     }
 
     @Override
@@ -43,6 +47,10 @@ public class NarudzbaProizvodiFormValidatorImpl implements NarudzbaProizvodiForm
 
         if(!proizvodService.existsById(form.getProizvodId())){
             throw new ValidationException("Ne postoji proizvod sa id-om:"+ form.getProizvodId());
+        }
+
+        if(proizvodService.get(form.getProizvodId()).getKolicina()<=0){
+            throw new ValidationException("Željenog proizvoda nema na zalihama. (id: "+form.getProizvodId()+")");
         }
     }
 }

@@ -1,8 +1,10 @@
 package com.pristupni_zadatak.miniwebshop.service.impl;
 
 import com.pristupni_zadatak.miniwebshop.entity.NarudzbaProizvodi;
+import com.pristupni_zadatak.miniwebshop.entity.Proizvod;
 import com.pristupni_zadatak.miniwebshop.repository.NarudzbaProizvodiRepository;
 import com.pristupni_zadatak.miniwebshop.service.NarudzbaProizvodiService;
+import com.pristupni_zadatak.miniwebshop.service.ProizvodService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +14,11 @@ public class NarudzbaProizvodiServiceImpl implements NarudzbaProizvodiService {
 
     private final NarudzbaProizvodiRepository repository;
 
-    public NarudzbaProizvodiServiceImpl(NarudzbaProizvodiRepository repository) {
+    private final ProizvodService proizvodService;
+
+    public NarudzbaProizvodiServiceImpl(NarudzbaProizvodiRepository repository, ProizvodService proizvodService) {
         this.repository = repository;
+        this.proizvodService = proizvodService;
     }
 
     @Override
@@ -34,6 +39,9 @@ public class NarudzbaProizvodiServiceImpl implements NarudzbaProizvodiService {
 
     @Override
     public void create(NarudzbaProizvodi narudzbaProizvodi) {
+        Proizvod proizvod= proizvodService.get(narudzbaProizvodi.getProizvodId());
+        proizvod.setKolicina(proizvod.getKolicina()-1);
+        proizvodService.edit(proizvod.getId(), proizvod);
         repository.save(narudzbaProizvodi);
     }
 
@@ -45,6 +53,9 @@ public class NarudzbaProizvodiServiceImpl implements NarudzbaProizvodiService {
 
     @Override
     public void delete(Long id) {
+        Proizvod proizvod= proizvodService.get(repository.getById(id).getProizvodId());
+        proizvod.setKolicina(proizvod.getKolicina()+1);
+        proizvodService.edit(proizvod.getId(), proizvod);
         repository.delete(repository.getById(id));
     }
 }

@@ -23,7 +23,7 @@ public class NarudzbaProizvodi {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PROIZVOD_ID", insertable = false, updatable = false)
-    private Narudzba proizvod;
+    private Proizvod proizvod;
 
     public Long getId() {
         return id;
@@ -57,11 +57,11 @@ public class NarudzbaProizvodi {
         this.narudzba = narudzba;
     }
 
-    public Narudzba getProizvod() {
+    public Proizvod getProizvod() {
         return proizvod;
     }
 
-    public void setProizvod(Narudzba proizvod) {
+    public void setProizvod(Proizvod proizvod) {
         this.proizvod = proizvod;
     }
 }

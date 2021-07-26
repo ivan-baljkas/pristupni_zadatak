@@ -2,10 +2,12 @@ package com.pristupni_zadatak.miniwebshop.facade.impl;
 
 import com.pristupni_zadatak.miniwebshop.dto.NarudzbaProizvodiDto;
 import com.pristupni_zadatak.miniwebshop.entity.NarudzbaProizvodi;
+import com.pristupni_zadatak.miniwebshop.entity.Proizvod;
 import com.pristupni_zadatak.miniwebshop.facade.NarudzbaProizvodiFacade;
 import com.pristupni_zadatak.miniwebshop.form.NarudzbaProizvodiForm;
 import com.pristupni_zadatak.miniwebshop.mapper.NarudzbaProizvodiMapper;
 import com.pristupni_zadatak.miniwebshop.service.NarudzbaProizvodiService;
+import com.pristupni_zadatak.miniwebshop.service.ProizvodService;
 import com.pristupni_zadatak.miniwebshop.validator.NarudzbaProizvodiFormValidator;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
@@ -21,7 +23,7 @@ public class NarudzbaProizvodiFacadeImpl implements NarudzbaProizvodiFacade {
     private final NarudzbaProizvodiFormValidator formValidator;
     private final NarudzbaProizvodiMapper mapper;
 
-    public NarudzbaProizvodiFacadeImpl(NarudzbaProizvodiService service, NarudzbaProizvodiFormValidator formValidator, NarudzbaProizvodiMapper mapper) {
+    public NarudzbaProizvodiFacadeImpl(NarudzbaProizvodiService service, NarudzbaProizvodiFormValidator formValidator, NarudzbaProizvodiMapper mapper, ProizvodService proizvodService) {
         this.service = service;
         this.formValidator = formValidator;
         this.mapper = mapper;

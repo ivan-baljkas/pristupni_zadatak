@@ -34,12 +34,18 @@ public class NarudzbaServiceImpl implements NarudzbaService {
 
     @Override
     public void create(Narudzba narudzba) {
+        if(narudzba.getKodZaPopust()!= null){
+            narudzba.setUkupnaCijenaSP(narudzba.getUkupnaCijenaBezP()*(1-narudzba.getKodZaPopust().getPopust()));
+        }
         repository.save(narudzba);
     }
 
     @Override
     public void edit(Long id, Narudzba narudzba) {
         narudzba.setId(id);
+        if(narudzba.getKodZaPopust()!= null){
+            narudzba.setUkupnaCijenaSP(narudzba.getUkupnaCijenaBezP()*(1-narudzba.getKodZaPopust().getPopust()));
+        }
         repository.save(narudzba);
     }
 
