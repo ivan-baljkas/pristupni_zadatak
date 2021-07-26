@@ -28,6 +28,11 @@ public class PopustKodoviController {
         return facade.get(Id);
     }
 
+    @GetMapping("/kod/{kod}")
+    public PopustKodoviDto getbyKod(@PathVariable String kod){
+        return facade.getByKod(kod);
+    }
+
     @PostMapping
     public void create(@RequestBody PopustKodoviForm form){
         facade.create(form);

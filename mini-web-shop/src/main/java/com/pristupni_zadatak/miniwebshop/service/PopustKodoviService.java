@@ -18,4 +18,6 @@ public interface PopustKodoviService {
     void delete(Long id);
 
     void edit(Long id, PopustKodovi popustKodovi);
+
+    PopustKodovi getByKod(String kod);
 }

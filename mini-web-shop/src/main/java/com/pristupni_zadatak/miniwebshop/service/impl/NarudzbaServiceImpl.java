@@ -1,8 +1,10 @@
 package com.pristupni_zadatak.miniwebshop.service.impl;
 
 import com.pristupni_zadatak.miniwebshop.entity.Narudzba;
+import com.pristupni_zadatak.miniwebshop.entity.PopustKodovi;
 import com.pristupni_zadatak.miniwebshop.repository.NarudzbaRepository;
 import com.pristupni_zadatak.miniwebshop.service.NarudzbaService;
+import com.pristupni_zadatak.miniwebshop.service.PopustKodoviService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +14,11 @@ public class NarudzbaServiceImpl implements NarudzbaService {
 
     private final NarudzbaRepository repository;
 
-    public NarudzbaServiceImpl(NarudzbaRepository repository) {
+    private final PopustKodoviService popustKodoviService;
+
+    public NarudzbaServiceImpl(NarudzbaRepository repository, PopustKodoviService popustKodoviService) {
         this.repository = repository;
+        this.popustKodoviService = popustKodoviService;
     }
 
     @Override
@@ -34,8 +39,13 @@ public class NarudzbaServiceImpl implements NarudzbaService {
 
     @Override
     public void create(Narudzba narudzba) {
-        if(narudzba.getKodZaPopust()!= null){
-            narudzba.setUkupnaCijenaSP(narudzba.getUkupnaCijenaBezP()*(1-narudzba.getKodZaPopust().getPopust()));
+        if(narudzba.getKodZaPopustId()!= null){
+            PopustKodovi kod = popustKodoviService.get(narudzba.getKodZaPopustId());
+            kod.setIskoristen(true);
+            narudzba.setUkupnaCijenaSP(narudzba.getUkupnaCijenaBezP()*(1-kod.getPopust()));
+        }
+        else{
+            narudzba.setUkupnaCijenaSP(narudzba.getUkupnaCijenaBezP());
         }
         repository.save(narudzba);
     }
@@ -43,9 +53,6 @@ public class NarudzbaServiceImpl implements NarudzbaService {
     @Override
     public void edit(Long id, Narudzba narudzba) {
         narudzba.setId(id);
-        if(narudzba.getKodZaPopust()!= null){
-            narudzba.setUkupnaCijenaSP(narudzba.getUkupnaCijenaBezP()*(1-narudzba.getKodZaPopust().getPopust()));
-        }
         repository.save(narudzba);
     }
 

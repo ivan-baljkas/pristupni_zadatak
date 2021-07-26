@@ -16,4 +16,6 @@ public interface PopustKodoviFacade {
     void edit(Long id, PopustKodoviForm form);
 
     void delete(Long id);
+
+    PopustKodoviDto getByKod(String kod);
 }

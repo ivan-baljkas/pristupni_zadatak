@@ -64,4 +64,11 @@ public class PopustKodoviFacadeImpl implements PopustKodoviFacade {
     public void delete(Long id) {
         service.delete(id);
     }
+
+    @Override
+    public PopustKodoviDto getByKod(String kod) {
+        return Optional.of(service.getByKod(kod))
+                .map(popustKodovi ->  mapper.map(popustKodovi)
+                ).orElse(null);
+    }
 }

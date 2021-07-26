@@ -50,6 +50,12 @@ public class PopustKodoviServiceImpl implements PopustKodoviService {
     }
 
     @Override
+    public PopustKodovi getByKod(String kod) {
+        return repository.findFirstByKod(kod)
+                .orElseThrow(() -> new IllegalArgumentException("Ne postoji PopustKod koji ima kod: "+kod));
+    }
+
+    @Override
     public void delete(Long id) {
         repository.delete(repository.getById(id));
     }

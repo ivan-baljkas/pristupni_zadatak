@@ -72,7 +72,8 @@ INSERT INTO PROIZVOD (NAZIV, OPIS, CIJENA, KOLICINA, BRAND_ID) VALUES
     ('Air Force 1', 'Nike tenisice', 900, 5, 1),
     ('Continental 80', 'Adidas tenisice', 800, 3, 2),
     ('Ralph Sampson', 'Puma tenisice', 750, 2, 3),
-    ('Club C', 'Reebok tenisice', 700, 5, 4);
+    ('Club C', 'Reebok tenisice', 700, 5, 4),
+    ('SuperCourt', 'Adidas tenisice', 700, 3, 2);
 
 INSERT INTO NARUDZBA_PROIZVODI(NARUDZBA_ID, PROIZVOD_ID) VALUES
     (1, 1),
